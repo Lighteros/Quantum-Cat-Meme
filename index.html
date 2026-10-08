@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Quantum Cat ($Schrodinger) | The Superposition Cat on Solana</title>
+  <meta name="description" content="Quantum Cat ($Schrodinger): a cat beyond certainty, roaming through waves of infinite possibility. A Solana meme coin inspired by Schrödinger's famous thought experiment." />
+  <meta name="theme-color" content="#030616" />
+  <link rel="canonical" href="https://schrodingerqcat.lol/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Quantum Cat ($Schrodinger)" />
+  <meta property="og:description" content="A cat beyond certainty, roaming through waves of infinite possibility. Both here and everywhere, on Solana." />
+  <meta property="og:url" content="https://schrodingerqcat.lol/" />
+  <meta property="og:image" content="https://schrodingerqcat.lol/assets/img/og-banner.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Quantum Cat ($Schrodinger)" />
+  <meta name="twitter:image" content="https://schrodingerqcat.lol/assets/img/og-banner.jpg" />
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800;900&family=Sora:wght@300;400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="preload" as="image" href="assets/img/logo.webp" />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <!-- Background: wave-interference field + particles (canvas), nebula, quantum grid, scanlines -->
+  <canvas id="fx-canvas" aria-hidden="true"></canvas>
+  <div class="bg-nebula" aria-hidden="true"><span></span><span></span><span></span><span></span></div>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-scan" aria-hidden="true"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+  <div class="scroll-progress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a class="nav-brand" href="#hero">
+      <span class="nav-logo"><img src="assets/img/logo.webp" alt="Quantum Cat logo" width="44" height="44" /></span>
+      <span class="nav-ticker" data-flicker="$Schrodinger|$Schr0dinger">$Schrodinger</span>
+    </a>
+    <nav class="nav-links" id="nav-links">
+      <a href="#about"><i>|</i>about<i>&rang;</i></a>
+      <a href="#howtobuy"><i>|</i>how-to-buy<i>&rang;</i></a>
+      <a href="#chart"><i>|</i>chart<i>&rang;</i></a>
+      <a href="#lore"><i>|</i>lore<i>&rang;</i></a>
+      <a href="#joinus"><i>|</i>join-us<i>&rang;</i></a>
+    </nav>
+    <div class="nav-cta">
+      <a class="icon-btn" data-link="x" target="_blank" rel="noopener" aria-label="Quantum Cat on X"><span class="svg-icon" data-svg="assets/icons/x.svg" data-mono></span></a>
+      <a class="btn btn-primary btn-sm" data-link="buy" target="_blank" rel="noopener"><span class="btn-label">Buy $Schrodinger</span></a>
+      <button class="nav-toggle" id="nav-toggle" aria-label="Menu"><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="hero-floaters" aria-hidden="true"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow reveal"><span class="svg-icon chain-icon" data-svg="assets/icons/solana.svg" data-mono></span><span>Solana Meme Coin</span><span class="eq">&psi; = &alpha;|alive&rang; + &beta;|asleep&rang;</span></p>
+          <h1 class="hero-title reveal" data-delay="80">
+            <span class="super" data-text="Quantum">Quantum</span>
+            <span class="super super-2" data-text="Cat">Cat</span>
+          </h1>
+          <p class="hero-ticker reveal" data-delay="160"><span class="ket">|</span><span class="ticker-text">$Schrodinger</span><span class="ket">&rang;</span>
+            <span class="state-pill" id="state-pill" title="Click to observe"><b class="dot"></b><span id="state-text">superposition</span></span></p>
+          <p class="hero-desc reveal" data-delay="220">A cat beyond certainty, roaming through waves of infinite possibility. Both here and everywhere, with nine lives and countless realities to explore.</p>
+          <div class="ca-box reveal" data-delay="280" data-copy-ca>
+            <span class="ca-label">CA</span>
+            <code class="ca-value" data-bind="contract">Coming soon</code>
+            <button class="ca-copy" type="button" aria-label="Copy contract address">Copy</button>
+          </div>
+          <div class="hero-actions reveal" data-delay="340">
+            <a class="btn btn-primary magnetic" data-link="buy" target="_blank" rel="noopener"><span class="svg-icon" data-svg="assets/icons/pumpfun-logomark.svg" data-mono></span><span class="btn-label">Buy on PumpSwap</span></a>
+            <a class="btn btn-ghost magnetic" data-link="dexscreener" target="_blank" rel="noopener"><span class="svg-icon" data-svg="assets/icons/dexscreener.svg" data-mono></span><span class="btn-label">DexScreener</span></a>
+            <button class="btn btn-ghost btn-observe magnetic" type="button" id="observe-btn"><span class="eye"></span>Observe the cat</button>
+          </div>
+        </div>
+
+        <div class="hero-art reveal" data-delay="150">
+          <div class="qbox" aria-hidden="true">
+            <div class="cube"><i class="f1"></i><i class="f2"></i><i class="f3"></i><i class="f4"></i><i class="f5"></i><i class="f6"></i></div>
+          </div>
+          <div class="orbit o1" aria-hidden="true"><b></b></div>
+          <div class="orbit o2" aria-hidden="true"><b></b></div>
+          <div class="orbit o3" aria-hidden="true"><b></b></div>
+          <div class="logo-frame tilt" data-parallax="0.08">
+            <img class="hero-logo" src="assets/img/logo.webp" alt="Quantum Cat: a black cat inside a glowing wireframe cube" width="800" height="800" />
+            <img class="hero-logo ghost g1" src="assets/img/logo.webp" alt="" aria-hidden="true" />
+            <img class="hero-logo ghost g2" src="assets/img/logo.webp" alt="" aria-hidden="true" />
+            <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          </div>
+          <div class="readout r1" aria-hidden="true"><small>P(here)</small><b data-prob="a">0.50</b></div>
+          <div class="readout r2" aria-hidden="true"><small>P(everywhere)</small><b data-prob="b">0.50</b></div>
+        </div>
+      </div>
+      <a class="scroll-cue" href="#about" aria-label="Scroll to About"><span></span></a>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee" aria-hidden="true"><div class="marquee-track" data-marquee></div></div>
+
+    <!-- ABOUT -->
+    <section id="about" class="section about">
+      <div class="container about-grid">
+        <div class="about-art reveal">
+          <div class="media-169 holo tilt-soft">
+            <img data-slot="about" src="assets/gen/about-scene.webp" alt="Quantum Cat silhouette inside a glowing cube" loading="lazy" width="1280" height="720" />
+            <span class="scan" aria-hidden="true"></span>
+            <span class="corner c1"></span><span class="corner c2"></span><span class="corner c3"></span><span class="corner c4"></span>
+          </div>
+          <div class="about-badge spin-slow" aria-hidden="true"><svg viewBox="0 0 200 200"><defs><path id="circ" d="M100,100 m-78,0 a78,78 0 1,1 156,0 a78,78 0 1,1 -156,0"/></defs><text><textPath href="#circ">QUANTUM CAT - $SCHRODINGER - NINE LIVES - INFINITE REALITIES -</textPath></text></svg><img src="assets/img/logo.webp" alt="" loading="lazy" /></div>
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow reveal"><span class="ket">|</span>about<span class="ket">&rang;</span></p>
+          <h2 class="section-title reveal">What is <span class="grad-text">Quantum Cat</span>?</h2>
+          <p class="lead reveal" data-bind="description"></p>
+          <p class="reveal" data-bind="aboutLong"></p>
+          <div class="stats reveal" data-stats></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW TO BUY -->
+    <section id="howtobuy" class="section howtobuy">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="ket">|</span>how-to-buy<span class="ket">&rang;</span></p>
+        <h2 class="section-title reveal">Collapse into <span class="grad-text">$Schrodinger</span></h2>
+        <p class="section-sub reveal">Four observations and the wavefunction is yours.</p>
+        <div class="steps" data-steps></div>
+        <div class="partner-row reveal" data-partners></div>
+      </div>
+    </section>
+
+    <!-- CHART (DexScreener embed only) -->
+    <section id="chart" class="section chart">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="ket">|</span>chart<span class="ket">&rang;</span></p>
+        <h2 class="section-title reveal">Live <span class="grad-text">$Schrodinger</span> chart</h2>
+        <div class="chart-frame reveal">
+          <iframe id="dexscreener-embed" title="$Schrodinger DexScreener chart" loading="lazy" src="about:blank" hidden></iframe>
+          <div class="chart-pending" id="chart-pending">
+            <svg class="wave-svg" viewBox="0 0 600 120" preserveAspectRatio="none" aria-hidden="true"><path id="wave-a" d=""/><path id="wave-b" d=""/></svg>
+            <span class="svg-icon big" data-svg="assets/icons/dexscreener.svg" data-mono></span>
+            <h3>Chart in superposition</h3>
+            <p>The DexScreener chart collapses into existence the moment $Schrodinger launches on Solana.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LORE GALLERY -->
+    <section id="lore" class="section lore">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="ket">|</span>lore<span class="ket">&rang;</span></p>
+        <h2 class="section-title reveal">Observed <span class="grad-text">states</span></h2>
+        <p class="section-sub reveal">Every frame is one possible reality. Tap to open the box.</p>
+        <div class="gallery" data-gallery></div>
+      </div>
+    </section>
+
+    <!-- JOIN US (the ONLY place the banner appears, at 3:1) -->
+    <section id="joinus" class="section joinus">
+      <div class="container">
+        <p class="eyebrow reveal"><span class="ket">|</span>join-us<span class="ket">&rang;</span></p>
+        <h2 class="section-title reveal">Join the <span class="grad-text">multiverse pack</span></h2>
+        <div class="banner-wrap reveal tilt-soft">
+          <img class="banner-3x1" src="assets/img/banner.webp" alt="Quantum Cat banner: a holographic cat walking a quantum grid" loading="lazy" width="2172" height="724" />
+          <div class="banner-shine" aria-hidden="true"></div>
+        </div>
+        <div class="social-row reveal">
+          <a class="social-card magnetic" data-link="x" target="_blank" rel="noopener"><span class="svg-icon" data-svg="assets/icons/x.svg" data-mono></span><span><b>Follow on X</b><small>Signals from the box</small></span></a>
+          <a class="social-card magnetic" data-link="dexscreener" target="_blank" rel="noopener"><span class="svg-icon" data-svg="assets/icons/dexscreener.svg" data-mono></span><span><b>DexScreener</b><small>Track every state</small></span></a>
+          <a class="social-card magnetic" data-link="buy" target="_blank" rel="noopener"><span class="svg-icon" data-svg="assets/icons/pumpfun-logomark.svg" data-mono></span><span><b>PumpSwap</b><small>Collapse into $Schrodinger</small></span></a>
+          <a class="social-card magnetic" data-link="telegram" target="_blank" rel="noopener" hidden><span class="svg-icon" data-svg="assets/icons/telegram.svg" data-mono></span><span><b>Telegram</b><small>Join the chat</small></span></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand"><img src="assets/img/logo.webp" alt="" loading="lazy" /><span>Quantum Cat</span><code>$Schrodinger</code></div>
+      <p class="disclaimer">$Schrodinger is a meme coin with no intrinsic value or expectation of financial return. It is for entertainment purposes only. Always do your own research.</p>
+      <p class="copyright">&copy; <span data-year></span> Quantum Cat. Both here and everywhere.</p>
+    </div>
+  </footer>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Image viewer" hidden>
+    <button class="lb-close" type="button" aria-label="Close">Close</button>
+    <button class="lb-nav lb-prev" type="button" aria-label="Previous image"><span></span></button>
+    <figure class="lb-figure"><img id="lb-img" src="" alt="" /><figcaption id="lb-cap"></figcaption></figure>
+    <button class="lb-nav lb-next" type="button" aria-label="Next image"><span></span></button>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="js/config.js"></script>
+  <script src="js/main.js" defer></script>
+</body>
+</html>
