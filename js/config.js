@@ -9,7 +9,7 @@ const X_URL = "https://x.com/QuantumCatSCH";
 
 // Solana contract address (CA). Leave "" until launch.
 // Once set, the DexScreener chart, the PumpSwap buy links and the Copy button switch on.
-const CA = "";
+const CA = "4sN5ek6KwNH39pgAusxz29YtcRBqvWH9baCUnP4cpump";
 
 const SOL_MINT = "So11111111111111111111111111111111111111112";
 
