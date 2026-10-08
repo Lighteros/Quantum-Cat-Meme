@@ -280,6 +280,54 @@ p { color: var(--muted); }
 .lb-next span { transform: rotate(135deg); margin-right: 4px; }
 .lb-nav:hover { box-shadow: var(--glow-c); }
 
+
+/* ---------- Noticed (Elon tweet embed) ---------- */
+.noticed .section-sub { max-width: 640px; }
+.tweet-stage {
+  margin-top: 36px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.tweet-frame {
+  position: relative;
+  width: min(100%, 560px);
+  padding: clamp(18px, 3vw, 28px);
+  border-radius: var(--radius);
+  background: var(--surface);
+  border: 1px solid rgba(60,220,255,.45);
+  box-shadow: 0 0 60px rgba(60,220,255,.15), 0 24px 60px rgba(0,0,0,.45);
+  backdrop-filter: blur(12px);
+  overflow: hidden;
+}
+.tweet-frame .twitter-tweet {
+  margin: 0 auto !important;
+  max-width: 100% !important;
+}
+.tweet-frame iframe {
+  max-width: 100% !important;
+  width: 100% !important;
+}
+.tweet-frame img,
+.tweet-frame video {
+  max-width: 100% !important;
+  height: auto !important;
+  object-fit: contain !important;
+}
+.tweet-fallback {
+  font-family: var(--font-mono);
+  font-size: .86rem;
+  color: var(--primary);
+  letter-spacing: .04em;
+  opacity: .85;
+  transition: opacity .2s, color .2s;
+}
+.tweet-fallback:hover { opacity: 1; color: var(--gold); }
+@media (max-width: 560px) {
+  .tweet-frame { width: 100%; padding: 14px 12px; }
+}
+
 /* ---------- Join us ---------- */
 .banner-wrap { position: relative; margin-top: 30px; border-radius: var(--radius); overflow: hidden; border: 1px solid rgba(60,220,255,.5); box-shadow: 0 0 70px rgba(139,108,255,.3), 0 30px 80px rgba(0,0,0,.5); transition: transform .3s var(--ease); }
 .banner-3x1 { width: 100%; aspect-ratio: 3 / 1; height: auto; object-fit: cover; }
