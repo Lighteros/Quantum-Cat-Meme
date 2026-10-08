@@ -5,7 +5,7 @@
    ========================================================================== */
 
 // Official X account. The handle is about to be renamed: change it here only.
-const X_URL = "https://x.com/Lkwaenzo12";
+const X_URL = "https://x.com/QuantumCatSCH";
 
 // Solana contract address (CA). Leave "" until launch.
 // Once set, the DexScreener chart, the PumpSwap buy links and the Copy button switch on.
